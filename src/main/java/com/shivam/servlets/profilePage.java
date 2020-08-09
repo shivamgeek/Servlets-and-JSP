@@ -12,7 +12,9 @@ public class profilePage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		PrintWriter out = response.getWriter();
 		String user = request.getParameter("username");
+		String user_metadata = (String) request.getAttribute("user_metadata");
 		out.println("Welcome to Profile Page - "+user);
+		out.println("User Metadata is "+user_metadata);
 	}
 	
 }

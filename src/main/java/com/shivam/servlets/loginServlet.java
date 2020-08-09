@@ -26,7 +26,9 @@ public class loginServlet extends HttpServlet {
 		
 		if(user.equals("s")) {
 			RequestDispatcher rd = request.getRequestDispatcher("profilePage");
-			rd.forward(request, response);
+//			request.setAttribute("user_metadata", "<SOME USER DATA FETCHED FROM THE DATABASE>");
+//			rd.forward(request, response);
+			response.sendRedirect("profilePage");
 		}else {
 			RequestDispatcher rd = request.getRequestDispatcher("takeInput.html");
 			rd.forward(request, response);
