@@ -4,14 +4,25 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
   <servlet>
-  	<servlet-name>addServlet</servlet-name>
-  	<display-name>addServlet</display-name>
+  	<servlet-name>loginServlet</servlet-name>
   	<description></description>
-  	<servlet-class>com.shivam.servlets.addServlet</servlet-class>
+  	<servlet-class>com.shivam.servlets.loginServlet</servlet-class>
   </servlet>
+  
+  <servlet>
+  	<servlet-name>profilePage</servlet-name>
+  	<servlet-class>com.shivam.servlets.profilePage</servlet-class>
+  </servlet>
+  
   <servlet-mapping>
-  	<servlet-name>addServlet</servlet-name>
-  	<url-pattern>/addServletPath</url-pattern>
+  	<servlet-name>loginServlet</servlet-name>
+  	<url-pattern>/loginServletPath</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>profilePage</servlet-name>
+  	<url-pattern>/profilePage</url-pattern>
   </servlet-mapping>
 </web-app>
