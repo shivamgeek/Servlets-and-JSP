@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class loginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,14 +25,20 @@ public class loginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("doGET invoked!!<br>");
 		
+		String user_metadata = "A1B2C3D4G5H6I7J8K9";
+		
 		if(user.equals("s")) {
-			RequestDispatcher rd = request.getRequestDispatcher("profilePage");
-//			request.setAttribute("user_metadata", "<SOME USER DATA FETCHED FROM THE DATABASE>");
-//			rd.forward(request, response);
+			out.println("Login Successful, redirecting to profile page!<br>");
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("user_metadata", user_metadata);
+			session.setAttribute("user_name", user);
+			
 			response.sendRedirect("profilePage");
-		}else {
-			RequestDispatcher rd = request.getRequestDispatcher("takeInput.html");
-			rd.forward(request, response);
+		}
+		else {
+			out.println("Invalid Credentials !!<br>");
+			response.sendRedirect("takeInput.html");
 		}
 		
 		
