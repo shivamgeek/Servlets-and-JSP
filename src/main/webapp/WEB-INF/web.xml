@@ -12,8 +12,8 @@
   </servlet>
   
   <servlet>
-  	<servlet-name>profilePage</servlet-name>
-  	<servlet-class>com.shivam.servlets.profilePage</servlet-class>
+  	<servlet-name>profilePageServlet</servlet-name>
+  	<servlet-class>com.shivam.servlets.profilePageServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -22,7 +22,7 @@
   </servlet-mapping>
   
   <servlet-mapping>
-  	<servlet-name>profilePage</servlet-name>
-  	<url-pattern>/profilePage</url-pattern>
+  	<servlet-name>profilePageServlet</servlet-name>
+  	<url-pattern>/profilePageServlet</url-pattern>
   </servlet-mapping>
 </web-app>

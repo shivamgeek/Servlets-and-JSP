@@ -34,7 +34,7 @@ public class loginServlet extends HttpServlet {
 			session.setAttribute("user_metadata", user_metadata);
 			session.setAttribute("user_name", user);
 			
-			response.sendRedirect("profilePage");
+			response.sendRedirect("profilePageServlet");
 		}
 		else {
 			out.println("Invalid Credentials !!<br>");
