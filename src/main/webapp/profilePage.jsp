@@ -8,6 +8,21 @@
 </head>
 <body>
 
+<!-- 
+Built-in Objects in JSP - 
+
+1. request - HttpServletRequest
+2. response - HttpServletResponse
+3. pageContext - PageContext
+4. out - PrintWriter
+5. session - HttpSession
+6. application -  ServletContext
+7. config - ServletConfig
+
+ -->
+
+
+
 <!--  
 DIRECTIVE TAG -  Used to import packages in the converted Servlet file
 -->
