@@ -25,15 +25,12 @@ public class loginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("doGET invoked!!<br>");
 		
-		String user_metadata = "A1B2C3D4G5H6I7J8K9";
+		String user_key = "A1B2C3D4G5H6I7J8K9";
 		
 		if(user.equals("s")) {
-			out.println("Login Successful, redirecting to profile page!<br>");
-			
+			out.println("Login Successful, redirecting to profile Servlet!<br>");
 			HttpSession session = request.getSession();
-			session.setAttribute("user_metadata", user_metadata);
-			session.setAttribute("user_name", user);
-			
+			session.setAttribute("user_key", user_key);
 			response.sendRedirect("profilePageServlet");
 		}
 		else {

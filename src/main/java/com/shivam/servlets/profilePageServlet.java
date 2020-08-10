@@ -15,16 +15,15 @@ public class profilePageServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		String user = (String) request.getSession().getAttribute("user_name");
+		String user_key = (String) request.getSession().getAttribute("user_key");
 		
-		if(user == null) {
-			out.println("No existing session found");
+		if(user_key.contentEquals("A1B2C3D4G5H6I7J8K9")) {
+			out.println("Login Successful, redirecting to profile page!<br>");
+			String user_name = "John Wick!!!!!";
+			session.setAttribute("user_name", user_name);
+			response.sendRedirect("profilePage.jsp");
 		}else {
-			String user_metadata = (String) request.getSession().getAttribute("user_metadata");
-			out.println("<html><body bgcolor = 'yellow'>");
-			out.println("Welcome to Profile Page - "+user);
-			out.println("<br>USER METADATA IS "+user_metadata);
-			out.println("</body><html>");
+			out.println("No existing session found! You didn't login it seems!");
 		}
 		
 	}
